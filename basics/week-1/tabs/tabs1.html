@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .tabs {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 100px auto;
+    }
+
+    .tabNav {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .tabNav button {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: 1px solid #ddd;
+      background: #f9f9f9;
+      margin-right: 5px;
+    }
+
+    .tabNav button.active {
+      background: #007BFF;
+      color: white;
+      border-color: #007BFF;
+    }
+
+    .tabContent {
+      border: 1px solid #ddd;
+      padding: 15px;
+    }
+
+    .tabContentItem {
+      display: none;
+    }
+
+    .tabContentItem.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- tabs -->
+  <div class="tabs">
+    <div class="tabNav">
+      <button type="button" data-tab="tab1" class="active">Tab 1</button>
+      <button type="button" data-tab="tab2" class="">Tab 2</button>
+      <button type="button" data-tab="tab3" class="">Tab 3</button>
+    </div>
+    <div class="tabContent">
+      <div class="tabContentItem active" id="tab1">
+        content tab 1
+      </div>
+      <div class="tabContentItem" id="tab2">
+        content tab 2
+      </div>
+      <div class="tabContentItem" id="tab3">
+        content tab 3
+      </div>
+    </div>
+  </div>
+  <!-- tabs--end -->
+
+  <script>
+
+    const tabBtns = document.querySelectorAll('.tabNav button');
+    const tabContents = document.querySelectorAll('.tabContentItem');
+
+    tabBtns.forEach(tabBtn => {
+      tabBtn.addEventListener('click', () => {
+        const targetTab = tabBtn.getAttribute("data-tab");
+
+        tabBtns.forEach(btn => btn.classList.remove("active"));
+        tabBtn.classList.add('active');
+
+        tabContents.forEach(tabContent => {
+          if (tabContent.id === targetTab) {
+            tabContent.classList.add('active');
+          } else {
+            tabContent.classList.remove('active')
+          }
+        });
+
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>
