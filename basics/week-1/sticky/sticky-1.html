@@ -17,7 +17,9 @@
   .header {
     background-color: bisque;
     padding: 20px 20px;
-    transition: .3s;
+    transition: position 1s ease;
+    position: relative;
+    top: 0;
   }
 
   .header.sticky {
@@ -27,6 +29,7 @@
     width: 100%;
     height: auto;
     z-index: 2;
+    transition: position 1s ease;
   }
 
   .header p {
@@ -57,16 +60,17 @@
   <!-- section--end -->
 
   <script>
-    const header = document.querySelector(".header");
-    const stickyPoint = header.offsetTop + 100
+
+    const header = document.querySelector('.header');
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY >= stickyPoint) {
+      if (window.scrollY >= 1) {
         header.classList.add('sticky');
       } else {
         header.classList.remove('sticky');
       }
-    })
+
+    });
 
   </script>
 

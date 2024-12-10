@@ -16,7 +16,7 @@
     .accordion {
       border: 1px solid #ddd;
       border-radius: 5px;
-      width: 300px;
+      width: 100%;
       font-family: Arial, sans-serif;
     }
 
@@ -36,8 +36,6 @@
       background-color: #1900ff;
     }
 
-
-
     .accordion-content {
       max-height: 0;
       overflow: hidden;
@@ -46,8 +44,17 @@
     }
 
     .accordion-content.active {
-      max-height: 200px;
+      max-height: 100%;
       padding: 10px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 100px 0px;
     }
   </style>
 
@@ -55,43 +62,81 @@
 
 <body>
 
-  <div class="accordion">
-    <div class="accordion-item">
-      <div class="accordion-header active">Section 1</div>
-      <div class="accordion-content">Content for Section 1</div>
+  <section>
+    <div class="container">
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header active">Accordion 1</div>
+          <div class="accordion-content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, optio.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">Accordion 2</div>
+          <div class="accordion-content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, sunt voluptatem sint voluptatibus eos
+              tempore? Obcaecati libero nam ipsum aperiam?
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">Section 3</div>
+          <div class="accordion-content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="accordion-item">
-      <div class="accordion-header">Section 2</div>
-      <div class="accordion-content">Content for Section 2</div>
-    </div>
-    <div class="accordion-item">
-      <div class="accordion-header">Section 3</div>
-      <div class="accordion-content">Content for Section 3</div>
-    </div>
-  </div>
+  </section>
 
 
   <script>
 
     const accHeaders = document.querySelectorAll('.accordion-header');
-
     accHeaders.forEach(accHeader => {
-      accHeader.addEventListener('click', () => {
+      accHeader.addEventListener('click', function () {
 
-        accHeaders.forEach(header => header.classList.remove('active'));
+        accHeaders.forEach(header => header.classList.remove('active'))
 
-        const nextSibContent = accHeader.nextElementSibling;
-
-        const accContents = document.querySelectorAll('.accordion-content');
-        accContents.forEach(content => {
-          if (content !== nextSibContent) content.classList.remove('active');
+        const accHeaderSibling = accHeader.nextElementSibling;
+        document.querySelectorAll('.accordion-content').forEach(content => {
+          if (content !== accHeaderSibling) {
+            content.classList.remove('active');
+          }
         });
+        this.classList.toggle('active')
+        accHeaderSibling.classList.toggle('active');
 
-        accHeader.classList.toggle('active');
-        nextSibContent.classList.toggle("active");
-      });
 
+      })
     });
+
+
+
+
+
+    // accHeaders.forEach(accHeader => {
+    //   accHeader.addEventListener('click', () => {
+
+    //     accHeaders.forEach(header => header.classList.remove('active'));
+
+    //     const nextSibContent = accHeader.nextElementSibling;
+
+    //     const accContents = document.querySelectorAll('.accordion-content');
+    //     accContents.forEach(content => {
+    //       if (content !== nextSibContent) content.classList.remove('active');
+    //     });
+
+    //     accHeader.classList.toggle('active');
+    //     nextSibContent.classList.toggle("active");
+    //   });
+
+    // });
 
   </script>
 

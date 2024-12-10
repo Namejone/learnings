@@ -1,0 +1,54 @@
+.slideItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slideItem {
+  width: 100%;
+  height: 400px;
+}
+
+.slideNav button {
+  border: none;
+  width: 48px;
+  height: 48px;
+  background: slategray;
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -24px;
+}
+
+.slideNav button.slide-next {
+  left: auto;
+  right: -24px;
+}
+
+
+.slideNav button:hover {
+  background-color: black;
+}
+
+
+/* slider-css */
+
+.slides {
+  display: flex;
+}
+
+.slideItem {
+  min-width: 100%;
+  width: 100%;
+  display: none;
+}
+
+.slideItem.active {
+  display: block;
+}
+
+/* slider-css--end */

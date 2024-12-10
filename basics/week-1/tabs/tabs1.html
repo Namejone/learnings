@@ -81,23 +81,43 @@
     const tabBtns = document.querySelectorAll('.tabNav button');
     const tabContents = document.querySelectorAll('.tabContentItem');
 
-    tabBtns.forEach(tabBtn => {
-      tabBtn.addEventListener('click', () => {
-        const targetTab = tabBtn.getAttribute("data-tab");
+    tabBtns.forEach(taBtn => {
+      taBtn.addEventListener('click', () => {
 
-        tabBtns.forEach(btn => btn.classList.remove("active"));
-        tabBtn.classList.add('active');
+        tabBtns.forEach(btn => btn.classList.remove('active'));
+        taBtn.classList.add('active');
+        const targetBtn = taBtn.getAttribute('data-tab');
 
-        tabContents.forEach(tabContent => {
-          if (tabContent.id === targetTab) {
-            tabContent.classList.add('active');
+        tabContents.forEach(content => {
+          if (content.id === targetBtn) {
+            content.classList.add('active');
           } else {
-            tabContent.classList.remove('active')
+            content.classList.remove('active');
           }
         });
 
+
       });
     });
+
+
+    // tabBtns.forEach(tabBtn => {
+    //   tabBtn.addEventListener('click', () => {
+    //     const targetTab = tabBtn.getAttribute("data-tab");
+
+    //     tabBtns.forEach(btn => btn.classList.remove("active"));
+    //     tabBtn.classList.add('active');
+
+    //     tabContents.forEach(tabContent => {
+    //       if (tabContent.id === targetTab) {
+    //         tabContent.classList.add('active');
+    //       } else {
+    //         tabContent.classList.remove('active')
+    //       }
+    //     });
+
+    //   });
+    // });
 
   </script>
 
