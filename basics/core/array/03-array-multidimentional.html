@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Js Array</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <section>
+    <div class="container"></div>
+  </section>
+
+  <script>
+    var ary = [
+      ['Foysal', 24, 'Front-end Developer'],
+      ['Nobel', 12, 'Student'],
+      ['Halima', 5, 'Child'],
+    ]
+
+    document.write("<table border='1'>");
+    for (let i = 0; i < ary.length; i++) {
+      document.write("<tr>");
+      for (let j = 0; j < ary[i].length; j++) {
+        document.write("<td>");
+        document.write(ary[i][j] + " ");
+        document.write("</td>");
+      }
+      document.write("</tr>");
+    }
+    document.write("</tr>");
+
+
+
+  </script>
+</body>
+
+</html>

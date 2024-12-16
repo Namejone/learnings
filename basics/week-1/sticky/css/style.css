@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+/* theme css */
+.btn {
+  font-size: 22px;
+  font-weight: 600;
+  padding: 19px 40px;
+  border-radius: 0px;
+  line-height: 1;
+}
+
+.btn-primary {
+  background-color: #A1F65E;
+  color: #2F2F2F;
+  border-color: #A1F65E;
+}
+
+.btn-primary:hover {
+  border-color: #92f547;
+  background-color: #92f547;
+  color: #2F2F2F;
+}
+
+.btn-light {
+  background-color: #F2F2F2;
+  color: #1D2229;
+}
+
+/* theme css end */
+
+
+/* header */
+
+.header {
+  padding: 50px 0px 33px;
+}
+
+.header-logo a {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1D2229;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-right {
+  gap: 54px;
+}
+
+.header-right nav ul {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-right nav ul li a {
+  color: #1D2229;
+  font-size: 20px;
+  font-weight: 600;
+  display: block;
+  text-decoration: none;
+}
+
+
+/* header--end */
+
+
+/* hero-area */
+
+.hero-wrapper {
+  padding: 230px 0px 230px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.hero-content h1 {
+  font-size: 80px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+/* hero-area--end */

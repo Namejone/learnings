@@ -1,0 +1,83 @@
+.stepNav {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.stepNav-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 33.33%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.stepNav-item span {
+  width: 40px;
+  height: 40px;
+  background: #909090;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 500;
+}
+
+.stepNav-item::after {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  background: #ccc;
+  content: "";
+  height: 1px;
+  width: 100%;
+  z-index: -1;
+}
+
+.stepNav-item:last-child::after {
+  display: none;
+}
+
+.stepNav-item.checked::after {
+  background: #25D366;
+}
+
+.stepNav-item.checked span {
+  background: #25D366;
+}
+
+.stepNav-item.aurrent span {
+  background: #0B5ED7;
+}
+
+.step-content {
+  min-height: 220px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.stepItem {
+  display: none;
+}
+
+.stepItem.active {
+  display: block;
+}
+
+.stepItem h2 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.stepBtns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.stepBtns button {
+  border-radius: 0px;
+  min-width: 200px;
+}
