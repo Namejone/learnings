@@ -221,8 +221,6 @@ h6 {
   background-color: #ffffff;
 }
 
-.accordion-content.show {}
-
 .accordion-body {
   padding: 16px 16px;
 }
@@ -244,6 +242,49 @@ h6 {
 }
 
 /* accordion--end */
+
+
+
+/* tab-css */
+
+.tab {
+  /* border: 1px solid #E6E6F0; */
+  max-width: 600px;
+}
+
+.tabNav {
+  display: flex;
+  align-items: stretch;
+}
+
+.tabNav button {
+  border: 1px solid #E6E6F0;
+  background-color: transparent;
+  padding: 14px 28px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.tab-content {
+  border: 1px solid #E6E6F0;
+  padding: 12px 15px;
+  display: none;
+}
+
+.tab-content.show {
+  display: block;
+}
+
+.tab .tabNav button.active {
+  background: #4AE3C8;
+  color: #1B1C57;
+  border-color: #4AE3C8;
+}
+
+
+
+/* tab-css--end */
+
 
 
 
