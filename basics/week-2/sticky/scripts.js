@@ -72,4 +72,39 @@ document.addEventListener("DOMContentLoaded", function () {
   inTabs();
 });
 
+// Modal
+
+const modalInit = () => {
+  const modalBtns = document.querySelectorAll('[data-modal]');
+  modalBtns.forEach(modalBtn => {
+    modalBtn.addEventListener('click', () => {
+      const tergetModal = document.getElementById(modalBtn.dataset.modalTarget);
+      if (tergetModal) {
+        tergetModal.classList.add('show');
+      }
+    })
+  });
+
+  const modalCloses = document.querySelectorAll('.modal-close');
+  modalCloses.forEach(modalClose => {
+    modalClose.addEventListener('click', () => {
+      const nearestModal = modalClose.closest('.modal');
+      if (nearestModal) {
+        nearestModal.classList.remove('show');
+      }
+    });
+  })
+
+  window.addEventListener('click', function (e) {
+    if (e.target.classList.contains('modal')) {
+      e.target.classList.remove('show');
+    }
+  })
+
+}
+
+modalInit();
+
+
+
 

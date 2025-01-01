@@ -192,62 +192,82 @@ button {
 
 /* accordion */
 
+/* Accordion Container */
+/* Accordion Container */
 .accordion {
-  max-width: 620px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Accordion Header */
+.accordion-header {
+  margin: 0;
+}
+
+/* Accordion Button */
+.accordion-button {
   width: 100%;
-}
-
-.accordion-item {
-  border: 1px solid #E6E6F0;
-  border-bottom: none;
-}
-
-.accordion-item:last-child {
-  border-bottom: 1px solid #E6E6F0;
-}
-
-.accordion-title {
-  padding: 14px 16px;
-  border-bottom: 1px solid transparent;
+  padding: 15px;
+  background-color: #4AE3C8;
+  color: white;
+  text-align: left;
+  border: none;
+  outline: none;
   cursor: pointer;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
 
-.accordion-title.active {
-  border-color: #E6E6F0;
+.accordion-button.collapsed {
+  background-color: #37c2a9;
 }
 
-.accordion-title h5 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 0px;
+.accordion-button:hover {
+  background-color: #35b3a1;
 }
 
-.accordion-content {
+/* Icon Styling */
+
+.accordion-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-button .bi {
+  transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) .bi {
+  transform: rotate(180deg);
+}
+
+
+
+.accordion-button.collapsed .icon {
+  transform: rotate(90deg);
+  /* Downward arrow */
+}
+
+/* Accordion Collapse Panel */
+.accordion-collapse {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
-  background-color: #ffffff;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
+.accordion-collapse.collapse.show {
+  max-height: 500px;
+  /* Adjust max height to fit your content */
+}
+
+/* Accordion Body */
 .accordion-body {
-  padding: 16px 16px;
-}
-
-.accordion-title::after {
-  content: "\F286";
-  font-family: "bootstrap-icons";
-  font-size: 19px;
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%) rotate(180deg);
-  transition: all .3s ease;
-}
-
-.accordion-title.active::after {
-  transform: translateY(-50%) rotate(0deg);
-  transition: all .3s ease;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
 }
 
 /* accordion--end */
